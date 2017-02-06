@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Meus Treinos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+      <!-- <ion-segment [(ngModel)]="categoria">
+        <ion-segment-button value="Peito">
+          Peito
+        </ion-segment-button>
+        <ion-segment-button value="costas">
+          Costas
+        </ion-segment-button>
+      </ion-segment> -->
+
+        <button ion-button full>Cadastrar Novo Treino</button>
+        <!-- <ion-select (ionChange)="changeCategory()" [(ngModel)]="gaming" name="category">
+            <ion-option value="peito">A - Peito</ion-option>
+            <ion-option value="costa">B - Costa</ion-option>
+            <ion-option value="braco">C - Braco</ion-option>
+            <ion-option value="perna">D - Perna</ion-option>
+            <ion-option value="perna">E - Abdomem</ion-option>
+        </ion-select> -->
+    <ion-list>
+      <ion-item *ngFor="let item of result">
+        <h2>{{items.atividade}}, {{items.exercicio}}</h2>
+        <button ion-button clear item-right (click)="viewItem(items)">View</button>
+      </ion-item>
+    </ion-list>
+</ion-content>
