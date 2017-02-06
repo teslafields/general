@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RESTFULService } from '../../app/services/restful.service';
 import { DetailsPage } from '../details/details';
+import { TreinoPage } from '../treino/treino';
 
 @Component({
   selector: 'exercicio',
@@ -46,6 +47,14 @@ export class ExercicioPage {
     this.navCtrl.push(DetailsPage, {
       item:this.items
     });
+  }
+
+  addItem(item){
+    console.log("Musculo "+item+" adicionado");
+  }
+
+  cadastrarTreino(){
+    this.navCtrl.push(TreinoPage);
   }
 
   // changeCategory(){

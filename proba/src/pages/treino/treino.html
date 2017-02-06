@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Novo Treino
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Código do Treino</ion-label>
+      <ion-select [(ngModel)]="gaming" required>
+        <ion-option value="A">A</ion-option>
+        <ion-option value="B">B</ion-option>
+        <ion-option value="C">C</ion-option>
+        <ion-option value="D">D</ion-option>
+        <ion-option value="E">E</ion-option>
+        <ion-option value="F">F</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list-header>
+      Grupos Musculares
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Peitoral</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Triceps</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Biceps</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Costas</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pernas</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Abdomen</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Aerobico</ion-label>
+      <ion-checkbox color="dark"></ion-checkbox>
+    </ion-item>
+
+    <button ion-button icon-right item-righ>
+      Avançar
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+
+
+  </ion-list>
+</ion-content>

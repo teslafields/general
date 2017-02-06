@@ -16,7 +16,7 @@
         </ion-segment-button>
       </ion-segment> -->
 
-        <button ion-button full>Cadastrar Novo Treino</button>
+        <button ion-button full (click)="cadastrarTreino()">Cadastrar Novo Treino</button>
         <!-- <ion-select (ionChange)="changeCategory()" [(ngModel)]="gaming" name="category">
             <ion-option value="peito">A - Peito</ion-option>
             <ion-option value="costa">B - Costa</ion-option>
@@ -25,9 +25,10 @@
             <ion-option value="perna">E - Abdomem</ion-option>
         </ion-select> -->
     <ion-list>
-      <ion-item *ngFor="let item of result">
-        <h2>{{items.atividade}}, {{items.exercicio}}</h2>
-        <button ion-button clear item-right (click)="viewItem(items)">View</button>
+      <ion-item *ngFor="let item of result; let i = index">
+        <h2>{{items.exercicio[i]}}</h2>
+        <button ion-button icon-only round clear item-left (click)="addItem(items.exercicio[i])"><ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+        <button ion-button clear item-right (click)="viewItem(items.exercicio[i])">Detalhes</button>
       </ion-item>
     </ion-list>
 </ion-content>
