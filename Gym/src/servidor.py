@@ -20,6 +20,7 @@ cont = 0
 pages = {
     'index': 'index.html',
     'student': 'student.html',
+    'teacher': 'teacher.html',
     'gym': 'gym.html'
     }
 
@@ -30,26 +31,22 @@ def index():
     print('route /')
     return render_template(INDEX, pages=pages)
 
-@app.route('/temperature', methods=['GET'])
-def get_temp():
-    print('route /temperature')
-    x = random.uniform(1,10)
-    global temperature
-    temperature = temperature + x
-    if temperature > 80:
-        temperature = 0.0
-    LIST_TEMP['temperature'].append([cont, temperature])
-    LIST_TEMP['datetime'].append(cont)
-    lis = LIST_TEMP.copy()
-    lis['temperature'] = list(LIST_TEMP['temperature'])
-    lis['datetime'] = list(LIST_TEMP['datetime'])
-
-    global cont
-    cont += 1
-
-    # lis['temp'] = [[date, temp]]
-
-    return jsonify(result=lis)
+# @app.route('/temperature', methods=['GET'])
+# def get_temp():
+#     print('route /temperature')
+#     x = random.uniform(1,10)
+#     global temperature
+#     temperature = temperature + x
+#     if temperature > 80:
+#         temperature = 0.0
+#     LIST_TEMP['temperature'].append([cont, temperature])
+#     LIST_TEMP['datetime'].append(cont)
+#     lis = LIST_TEMP.copy()
+#     lis['temperature'] = list(LIST_TEMP['temperature'])
+#     lis['datetime'] = list(LIST_TEMP['datetime'])
+#     global cont
+#     cont += 1
+#     return jsonify(result=lis)
 
 if __name__ == "__main__":
     try:

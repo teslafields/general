@@ -28,13 +28,17 @@
       <ul class="nav navbar-nav">
         <li class="active" id="home"><a href="#">Home</a></li>
         <li><a id="navGym" href="#">Gyms</a></li>
+        <li><a id="navTeacher" href="#">Teachers</a></li>
         <li><a id="navStudent" href="#">Students</a></li>
       </ul>
     </div>
   </nav>
-  <container id="txt2"></container>
   <div id='div-index-student' class='center'>
       {% include pages['student'] %}
+  </div>
+
+  <div id='div-index-teacher' class='center'>
+      {% include pages['teacher'] %}
   </div>
 
   <div id='div-index-gym' class='center'>
