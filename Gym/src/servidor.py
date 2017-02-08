@@ -19,6 +19,8 @@ temperature = 0.0
 cont = 0
 pages = {
     'index': 'index.html',
+    'student': 'student.html',
+    'gym': 'gym.html'
     }
 
 app = Flask(__name__, static_folder='static')
@@ -26,7 +28,7 @@ app = Flask(__name__, static_folder='static')
 @app.route('/')
 def index():
     print('route /')
-    return render_template(INDEX)
+    return render_template(INDEX, pages=pages)
 
 @app.route('/temperature', methods=['GET'])
 def get_temp():
@@ -51,6 +53,6 @@ def get_temp():
 
 if __name__ == "__main__":
     try:
-        app.run(host='localhost', port=5010)
+        app.run(host='10.5.0.13', port=5010)
     except KeyboardInterrupt:
         raise SystemExit

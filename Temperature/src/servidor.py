@@ -12,41 +12,45 @@ import os, sys
 import random
 from datetime import datetime
 from collections import deque
+from flask_cors import CORS, cross_origin
+from flask_basicauth import BasicAuth
+
 
 INDEX = 'index.html'
-LIST_TEMP = {'temperature': deque([], maxlen=100), 'datetime': deque([], maxlen=100)}
-temperature = 0.0
+# LIST_TEMP = {'temperature': deque([], maxlen=100), 'datetime': deque([], maxlen=100)}
+LIST_TEMP = {'exercicio': [], 'title': None, 'id': []}
+musculo = ['Triceps', 'Biceps', 'Abs', 'Peito', 'Costas', 'Perna']
+
 cont = 0
 pages = {
     'index': 'index.html',
     }
 
 app = Flask(__name__, static_folder='static')
+app.config['BASIC_AUTH_USERNAME'] = 'benhurzi@gmail.com'
+app.config['BASIC_AUTH_PASSWORD'] = 'fitlabcore'
+
+basic_auth = BasicAuth(app)
+
+CORS(app)
 
 @app.route('/')
 def index():
     print('route /')
     return render_template(INDEX)
 
-@app.route('/temperature', methods=['GET'])
+@app.route('/exercicio', methods=['GET'])
+@basic_auth.required
 def get_temp():
-    print('route /temperature')
-    x = random.uniform(1,10)
-    global temperature
-    temperature = temperature + x
-    if temperature > 80:
-        temperature = 0.0
-    LIST_TEMP['temperature'].append([cont, temperature])
-    LIST_TEMP['datetime'].append(cont)
+    global musculo
     lis = LIST_TEMP.copy()
-    lis['temperature'] = list(LIST_TEMP['temperature'])
-    lis['datetime'] = list(LIST_TEMP['datetime'])
-
+    lis['exercicio'] = musculo
+    lis['title'] = 'Musculo'
+    for i in range(0, len(musculo)):
+        lis['id'] = i
     global cont
     cont += 1
-
     # lis['temp'] = [[date, temp]]
-
     return jsonify(result=lis)
 
 if __name__ == "__main__":

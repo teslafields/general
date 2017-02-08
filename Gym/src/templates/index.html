@@ -4,6 +4,7 @@
 
   <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -11,41 +12,10 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['line']});
-        //google.charts.setOnLoadCallback();
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 
-      function drawChart(result) {
 
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Day');
-        data.addColumn('number', 'Temperature');
-        $.each(result.temperature, function(key, value){
-          console.log(key, value);
-          data.addRows([value]);
-        });
-
-        var options = {
-          chart: {
-            title: 'Temperature Sensing',
-            subtitle: 'from sensor x in plant y'
-          },
-          width: 900,
-          height: 500,
-          axes: {
-            x: {
-              0: {side: 'top'}
-            }
-          }
-        };
-
-        var chart = new google.charts.Line(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-
-    <script src="{{ url_for('static', filename='js/temperature.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/service.js') }}"></script>
 
 </head>
 
@@ -63,5 +33,12 @@
     </div>
   </nav>
   <container id="txt2"></container>
+  <div id='div-index-student' class='center'>
+      {% include pages['student'] %}
+  </div>
+
+  <div id='div-index-gym' class='center'>
+      {% include pages['gym'] %}
+  </div>
 </body>
 </html>
