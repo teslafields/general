@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['line']});
+        //google.charts.setOnLoadCallback();
+
+      function drawChart(result) {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Day');
+        data.addColumn('number', 'Temperature');
+        $.each(result.temperature, function(key, value){
+          console.log(key, value);
+          data.addRows([value]);
+        });
+
+        var options = {
+          chart: {
+            title: 'Temperature Sensing',
+            subtitle: 'from sensor x in plant y'
+          },
+          width: 900,
+          height: 500,
+          axes: {
+            x: {
+              0: {side: 'top'}
+            }
+          }
+        };
+
+        var chart = new google.charts.Line(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/temperature.js') }}"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Jiu-Jitsu</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active" id="home"><a href="#">Home</a></li>
+        <li><a id="navGym" href="#">Gyms</a></li>
+        <li><a id="navStudent" href="#">Students</a></li>
+      </ul>
+    </div>
+  </nav>
+  <container id="txt2"></container>
+</body>
+</html>
