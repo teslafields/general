@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<form method="post" id="form_rf" action='javascript:submitSetRf()'>
+    
+    <div class="myPadding25">
+        <a href="/"><span class="glyphicon glyphicon-home" style="color: #337ab7"></span></a>
+        <span class="glyphicon glyphicon-menu-right" style="color: #A9A9A9"></span>
+        <a href="javascript:breadcrumb($('#button-menu-rf'))"><span style="color: #337ab7"> Set RF </span></a>
+        <span class="glyphicon glyphicon-menu-right" style="color: #A9A9A9"></span>
+        <span style="color: #808080" id="breadcrumb_insertSetRF"> Insert Set RF </span>
+    </div>
+    <h3 class='text-center' style="color: #337ab7" id="title_insert_rf">Insert Set RF</h3><br>
+    <div class="row myPadding25">
+        <div class="col-md-10 col-md-offset-1">
+            
+            <fieldset>
+                <legend> RF </legend>
+                <div class="row">
+                    <label class="col-md-1 col-md-offset-1 control-label">set_rf_id</label>
+                    <div class="col-md-4">
+                        <input type="number" id='set_rf_id' class="form-control" name="set_rf_id" placeholder="rf_id">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> Button 1 </legend>
+                <div class="row">
+                    <label class="col-md-1 col-md-offset-1 control-label">ipwall_id</label>
+                    <div class="col-md-4">
+                        <select id='ipwall_id_1' class='form-control' name='ipwall_id_1'>
+                        </select>
+                    </div>
+                    <label class="col-md-1 control-label">door_id</label>
+                    <div class="col-md-4">
+                        <input id='door_id_1' type="number" class="form-control" name="door_id_1" placeholder="door_id">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> Button 2 </legend>                    
+                <div class="row">
+                    <label class="col-md-1 col-md-offset-1 control-label">ipwall_id</label>
+                    <div class="col-md-4">
+                        <select id='ipwall_id_2' class='form-control' name='ipwall_id_2'>
+                        </select>
+                    </div>
+                    <label class="col-md-1 control-label">door_id</label>
+                    <div class="col-md-4">
+                        <input id='door_id_2' type="number" class="form-control" name="door_id_2" placeholder="door_id">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> Button 3 </legend>                    
+                <div class="row">
+                    <label class="col-md-1 col-md-offset-1 control-label">ipwall_id</label>
+                    <div class="col-md-4">
+                        <select id='ipwall_id_3' class='form-control' name='ipwall_id_3'>
+                        </select>
+                    </div>
+                    <label class="col-md-1 control-label">door_id</label>
+                    <div class="col-md-4">
+                        <input id='door_id_3' type="number" class="form-control" name="door_id_3" placeholder="door_id">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> Button 4 </legend>                    
+                <div class="row">
+                    <label class="col-md-1 col-md-offset-1 control-label">ipwall_id</label>
+                    <div class="col-md-4">
+                        <select id='ipwall_id_4' class='form-control' name='ipwall_id_4'>
+                        </select>
+                    </div>
+                    <label class="col-md-1 control-label">door_id</label>
+                    <div class="col-md-4">
+                        <input id='door_id_4' type="number" class="form-control" name="door_id_4" placeholder="door_id">
+                    </div>
+                </div>
+            </fieldset><br>
+            
+        </div>
+    </div>
+    
+    <div class="myPadding25">
+        <a href="javascript:breadcrumb($('#button-menu-rf'))" class="col-md-2 btn btn-default active myPadding10" role="button"><span class="glyphicon glyphicon-chevron-left" style="margin-right: 5px"></span> Back </a>
+        <button type="submit" class="col-md-2 col-md-offset-8 btn btn-primary myPadding10"><span class="glyphicon glyphicon-ok" style="margin-right: 5px"></span> Submit </button><br><br>
+    </div>
+</form>

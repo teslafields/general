@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Behave</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="myPadding25">
+            <a href="/"><span class="glyphicon glyphicon-user" style="color: #337ab7"></span></a>
+            <span class="glyphicon glyphicon-menu-right" style="color: #A9A9A9"></span>
+            <span style="color: #808080"> Behave </span>
+        </div>
+
+        <div id="div_yes_guest">
+            <h3 class="text-center" style="color: #337ab7">Behave</h3><br>
+            <div class="myPadding25">
+                <button type="button" id="button_run_behave" class="btn btn-primary col-md-2 col-md-offset-10 myPadding10" data-toggle="modal" data-target="#behaveConfirm"><span class="glyphicon glyphicon-leaf" style="margin-right: 5px"></span> Run Behave </button>
+            </div>
+
+            <div id="result_behave"></div>
+
+            <div id="show-guest" class="myPadding25"></div>
+        </div>
+
+
+
+
+
+        <div class="modal fade" id="behaveConfirm" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Confirm Behave?</h4>
+                      </div>
+                      <div class="modal-body">
+                          <div class="alert alert-danger">
+                              <strong>Warning:</strong> If you confirm it, the server will be unavailable for a few minutes.
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
+                          <button type="button" id="button-confirm-behave" class="btn btn-danger" data-dismiss="modal">Yes</button>
+
+                      </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+</html>

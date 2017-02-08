@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<form method="post" id="form_qrcode_reader" action='javascript:submitQrcodeReader()'>
+    <div class="myPadding25">
+        <a href="/"><span class="glyphicon glyphicon-home" style="color: #337ab7"></span></a>
+        <span class="glyphicon glyphicon-menu-right" style="color: #A9A9A9"></span>
+        <a href="javascript:breadcrumb($('#button-menu-qrcode-reader'))"><span style="color: #337ab7"> QR Code Reader </span></a>
+        <span class="glyphicon glyphicon-menu-right" style="color: #A9A9A9"></span>
+        <span style="color: #808080" id="breadcrumb_insertQrcodeReader"> Insert QR Code Reader</span>
+    </div>
+    <h3 class='text-center' style="color: #337ab7" id="title_insert_qrcode_reader">Insert QR Code Reader</h3><br>
+    <div class="row myPadding25">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <label class="col-md-4 control-label">qrcode_reader_id</label>
+                        <div class="col-md-8">
+                            <input type="number" class="form-control" id ="qrcode_reader_id" name="qrcode_reader_id" placeholder="qrcode_reader_id" /><br/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="row">
+                        <label class="col-md-4 control-label">qrcode_reader_ip</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id ="qrcode_reader_ip" name="qrcode_reader_ip" placeholder="qrcode_reader_ip" /><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <fieldset>
+                <legend> Relation </legend>
+                <div id="relation">
+                </div>
+            </fieldset>
+            
+        </div>
+    </div>
+
+    <div class="myPadding25">
+        <a href="javascript:breadcrumb($('#button-menu-qrcode-reader'))" class="col-md-2 btn btn-default active myPadding10" role="button"><span class="glyphicon glyphicon-chevron-left" style="margin-right: 5px"></span> Back </a>
+        <button type="submit" class="col-md-2 col-md-offset-8 btn btn-primary myPadding10"><span class="glyphicon glyphicon-ok" style="margin-right: 5px"></span> Submit </button><br><br>
+    </div>
+</form>

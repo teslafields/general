@@ -1,0 +1,8 @@
+requirements:
+    flask-bootstrap
+    flask
+
+to get the server running, please run the following command on your terminal:
+    'python3 servidor.py {your ip address}'
+
+the port is defined as 5000, and it can be changed by changing the global variable 'port' in servidor.py
