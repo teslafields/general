@@ -23,7 +23,6 @@ hideAll = function() {
 showGym = function(data) {
   console.log(data)
   $("#div-student").hide();
-  $("#div-gym").append(data.name);
   $("#div-gym").show();
 }
 
@@ -45,18 +44,18 @@ submitGym = function() {
   // gym['addr'] = $("#gym-addr").val();
   // gym['contact'] = $("#gym-contact").val();
   console.log(gym);
-  $.ajax({
-      type: 'POST',
-      url: 'http://179.223.188.164:5000/gym/',
-      dataType: 'json',
-      data: gym,
-      headers: {
-          "Authorization": make_base_auth("benhurzi@gmail.com", "pierin2017")
-      },
-      success: function(data) {
-        console.log(data);
-      }
-      });
+  // $.ajax({
+  //     type: 'POST',
+  //     url: 'http://179.223.188.164:5000/gym/',
+  //     dataType: 'json',
+  //     data: gym,
+  //     headers: {
+  //         "Authorization": make_base_auth("benhurzi@gmail.com", "pierin2017")
+  //     },
+  //     success: function(data) {
+  //       console.log(data);
+  //     }
+  //     });
 }
 
 
@@ -74,19 +73,28 @@ $( document ).ready(function() {
                 {title: "Email"}
               ],
     });
-
+  $("#gym-contact").on('change', function (event) {
+    console.log(event.target.value);
+    // console.log($("gym-name").attr('value'));
+    // if ($.isNumeric(event.originalEvent.key)){
+    //   console.log(true);
+    // }else{
+    //   console.log(false);
+    // }
+  })
   $("#navGym").on("click", function(){
-    $.ajax({
-        type: 'GET',
-        url: 'http://179.223.188.164:5000/gym/',
-        dataType: 'json',
-        headers: {
-            "Authorization": make_base_auth("benhurzi@gmail.com", "pierin2017")
-        },
-        success: function(data) {
-          showGym(data.results);
-        }
-        });
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'http://179.223.188.164:5000/gym/',
+    //     dataType: 'json',
+    //     headers: {
+    //         "Authorization": make_base_auth("benhurzi@gmail.com", "pierin2017")
+    //     },
+    //     success: function(data) {
+    //       showGym(data.results);
+    //     }
+    //     });
+      showGym({name: "bla"});
     });
 
     $("#navStudent").on("click", function(){

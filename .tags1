@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+temperature	/home/benhur/general/Gym/src/static/js/service.js	/^\/\/ function temperature(data){$/;"	function	line:1
+myTimer	/home/benhur/general/Gym/src/static/js/service.js	/^\/\/ function myTimer() {$/;"	function	line:5
+all_div	/home/benhur/general/Gym/src/static/js/service.js	/^var all_div = [$/;"	variable	line:11
+hideAll	/home/benhur/general/Gym/src/static/js/service.js	/^hideAll = function() {$/;"	function	line:17
+hideAll	/home/benhur/general/Gym/src/static/js/service.js	/^var table;$/;"	function	line:15
+showGym	/home/benhur/general/Gym/src/static/js/service.js	/^showGym = function(data) {$/;"	function	line:23
+showGym	/home/benhur/general/Gym/src/static/js/service.js	/^}$/;"	function	line:21
+showStudent	/home/benhur/general/Gym/src/static/js/service.js	/^showStudent = function(data, table) {$/;"	function	line:30
+showStudent	/home/benhur/general/Gym/src/static/js/service.js	/^}$/;"	function	line:27
+submitGym	/home/benhur/general/Gym/src/static/js/service.js	/^submitGym = function() {$/;"	function	line:41
+submitGym	/home/benhur/general/Gym/src/static/js/service.js	/^}$/;"	function	line:39
+make_base_auth	/home/benhur/general/Gym/src/static/js/service.js	/^function make_base_auth(user, password) {$/;"	function	line:62
+make_base_auth	/home/benhur/general/Gym/src/static/js/service.js	/^function make_base_auth(user, password) {$/;"	function	line:62
+success	/home/benhur/general/Gym/src/static/js/service.js	/^          success: function(data) {$/;"	function	line:108
