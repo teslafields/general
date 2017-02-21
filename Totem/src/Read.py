@@ -11,8 +11,9 @@ class ReadTag:
     def __init__(self):
         # Hook the SIGINT
         # Create an object of the class MFRC522
+        self.RESULT = {}
         self.continue_reading = True
-        self.get_request = True
+        self.rest = True
         self.MIFAREReader = MFRC522.MFRC522()
         signal.signal(signal.SIGINT, self.end_read)
         # Welcome message
@@ -50,9 +51,10 @@ class ReadTag:
                     api = Api()
                     post_tag = {"tag": tag}
                     resp = api.post("tag/validate/", post_tag)
-                    res_json = resp.json(), resp.ok
-                    print("Response:\n{}".format(res_json))
-                    return res_json
+                    self.RESULT.update({'ok': resp.ok, 'data': resp.json()})
+                    print("Response:\n{}".format(self.RESULT))
+                    break
+                    # return res_json
 
                 # This is the default key for authentication
                 # key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]

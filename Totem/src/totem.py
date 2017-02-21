@@ -14,6 +14,9 @@ from datetime import datetime
 from collections import deque
 from Read import ReadTag
 
+
+ip = ['192.168.1.101', '10.100.10.191']
+
 # Object to read the tag
 tag = ReadTag()
 
@@ -32,14 +35,17 @@ def index():
     print('route /')
     return render_template(INDEX, pages=pages)
 
+@app.route('/jiu-jitsu-class')
+def jiu_jitsu_class():
+    return render_template(pages['jjclass'])
+
 
 if __name__ == "__main__":
     try:
-        Thread(target=app.run, kwargs={'host':'192.168.1.101', 'port':5000}).start()
-        res = tag.read_loop()
-        if res[1]:
-            if 'coach' in res[0]:
-                with app.app_context():
-                    render_template(pages['jjclass'])
-    except KeyboardInterrupt:
-        raise SystemExit
+        Thread(target=app.run, kwargs={'host':ip[1], 'port':5000}).start()
+        t=Thread(target=tag.read_loop).start()
+        t.join()
+        print("saiu da Thread")
+        if tag.RESULT['ok']:
+            jiu_jitsu_class()
+    except KeyboardInterrupt
