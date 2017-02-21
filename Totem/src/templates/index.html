@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="{{ url_for('static', filename='js/service.js') }}"></script>
+
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8"><h1>Welcome to Gracie Barra Jiu-Jitsu Center</h1></div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><img src="{{ url_for('static', filename='image/homepagelogo.png') }}" style="width:304px;height:304px;" ></div>
+    <div class="col-sm-4"></div>
+  </div>
+
+  <div id='div-index-jjclass' class='center'>
+      {% include pages['jjclass'] %}
+  </div>
+
+  <div id='div-index-gym' class='center'>
+      {% include pages['gym'] %}
+  </div>
+
+</body>
+</html>
