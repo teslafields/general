@@ -8,14 +8,13 @@ from RESTapi import Api
 
 
 class ReadTag:
-    continue_reading = True
-    get_request = True
-    tag_content = None
     def __init__(self):
         # Hook the SIGINT
         # Create an object of the class MFRC522
+        self.continue_reading = True
+        self.get_request = True
         self.MIFAREReader = MFRC522.MFRC522()
-        signal.signal(signal.SIGINT, end_read)
+        signal.signal(signal.SIGINT, self.end_read)
         # Welcome message
         print ("Welcome to the MFRC522 data read example")
         print ("Press Ctrl-C to stop.")
@@ -24,12 +23,13 @@ class ReadTag:
     def end_read(self, signal, frame):
         global continue_reading
         print ("Ctrl+C captured, ending read.")
-        continue_reading = False
+        self.continue_reading = False
         GPIO.cleanup()
+        raise SystemExit
 
     def read_loop(self):
         # This loop keeps checking for chips. If one is near it will get the UID and authenticate
-        while continue_reading:
+        while self.continue_reading:
 
             # Scan for cards
             (status,TagType) = self.MIFAREReader.MFRC522_Request(self.MIFAREReader.PICC_REQIDL)
@@ -46,12 +46,11 @@ class ReadTag:
 
                 # Print UID
                 tag = "{0}:{1}:{2}:{3}".format(uid[0], uid[1], uid[2], uid[3])
-                if get_request:
+                if self.get_request:
                     api = Api()
                     post_tag = {"tag": tag}
-                    print(post_tag)
                     resp = api.post("tag/validate/", post_tag)
-                    res_json = resp.json()
+                    res_json = resp.json(), resp.ok
                     print("Response:\n{}".format(res_json))
                     return res_json
 

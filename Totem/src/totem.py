@@ -35,7 +35,11 @@ def index():
 
 if __name__ == "__main__":
     try:
-        Thread(target=tag.read_loop).start()
-        app.run(host='localhost', port=5000)
+        Thread(target=app.run, kwargs={'host':'192.168.1.101', 'port':5000}).start()
+        res = tag.read_loop()
+        if res[1]:
+            if 'coach' in res[0]:
+                with app.app_context():
+                    render_template(pages['jjclass'])
     except KeyboardInterrupt:
         raise SystemExit

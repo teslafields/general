@@ -10,7 +10,7 @@
 // }
 var all_div = [
       "#div-gym",
-      "#div-student"
+      "#div-jjclass"
 ]
 var table;
 
